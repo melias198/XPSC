@@ -29,6 +29,7 @@ int main()
     for(auto it:s)
     {
         string temp=it.substr(it.length()-2);
+        
        // reverse(temp.begin(),temp.end());
         ans+=temp[1];
         ans+=temp[0];
