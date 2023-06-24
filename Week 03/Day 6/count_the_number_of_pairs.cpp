@@ -22,33 +22,43 @@ void solve()
     cin>>n>>k;
     string s;
     cin>>s;
-    map<char,int>mp;
+    int small[26]={0};
+    int big[26]={0};
     for(int i=0;i<n;i++)
     {
-        mp[s[i]]++;
-    }
-    sort(s.begin(),s.end());
-    int ans=0;
-    for(int i=0;i<n;i++)
-    {
-        if(mp[s[i]+20])
+        if(s[i]>='a' && s[i]<='z')
         {
-            ans=abs(mp[s[i]]-mp[s[i]+20]);
+            small[s[i]-'a']++;
+        }
+        else
+        {
+            big[s[i]-'A']++;
         }
     }
+
+    int ans=0;
+
+    for(int i=0;i<26;i++)
+    {
+        int pairs=min(small[i],big[i]);
+        ans+=pairs;
+        small[i]-=pairs; big[i]-=pairs;
+        int mx=min(k,max(small[i],big[i])/2);
+        k-=mx;
+        ans+=mx;
+    }
     cout<<ans<<'\n';
-    cout<<s<<'\n';
 }
 
 int main()
 {
     fast;
-    solve();
+   // solve();
     ll t;
-  //  cin >> t;
-  //  while (t--) 
-   // {
-  //      solve();
-    //}
+    cin >> t;
+    while (t--) 
+    {
+       solve();
+    }
     return 0;
 }
