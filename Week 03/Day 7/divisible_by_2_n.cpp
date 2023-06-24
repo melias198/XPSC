@@ -16,29 +16,52 @@
 #define minus cout<<-1<<endl
 using namespace std;
 
+int get_count(int x)
+{
+    int total=0;
+    while(x%2==0)
+    {
+        x/=2;
+        total++;
+    }
+    return total;
+}
+
 void solve()
 {
     int n;
-    char ch;
-    cin>>n>>ch;
-    string s;
-    cin>>s;
-    s=s+s;
-    int ans=0;
-    for(int i=0;i<s.size();i++)
+    cin>>n;
+    long long x=0,extra=0;
+    vector<int>a(n),b;
+    for(int i=0;i<n;i++)
     {
-        if(s[i]==ch)
-        {
-            int cnt=0;
-            while(s[i]!='g' && i<s.size())
-            {
-                i++;
-                cnt++;
-            }
-            ans=max(ans,cnt);
-        }
+        cin>>a[i];
+        x+=get_count(a[i]);
+        int cnt=get_count(i+1);
+        extra+=cnt;
+        b.push_back(cnt);
     }
 
+    if(x>=n)
+    {
+        cout<<0<<'\n';
+        return;
+    }
+
+    if(x+extra < n)
+    {
+        cout<<-1<<'\n';
+        return;
+    }
+
+    int ans=0;
+    sort(b.rbegin(),b.rend());
+    for(auto it:b)
+    {
+        ans++;
+        if(x+it>=n) break;
+        x+=it;
+    }
     cout<<ans<<'\n';
 }
 

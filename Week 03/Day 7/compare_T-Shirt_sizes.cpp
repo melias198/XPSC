@@ -18,28 +18,30 @@ using namespace std;
 
 void solve()
 {
-    int n;
-    char ch;
-    cin>>n>>ch;
-    string s;
-    cin>>s;
-    s=s+s;
-    int ans=0;
-    for(int i=0;i<s.size();i++)
+    string a,b;
+    cin>>a>>b;
+    char sa=a.back();
+    char sb=b.back();
+    int na=a.size(),ba=b.size();
+    if(sa==sb)
     {
-        if(s[i]==ch)
+        if(na==ba)
         {
-            int cnt=0;
-            while(s[i]!='g' && i<s.size())
-            {
-                i++;
-                cnt++;
-            }
-            ans=max(ans,cnt);
+            cout<<"="<<'\n';
+        }
+        else if(sa=='S')
+        {
+            cout<<(na<ba ? '>':'<')<<'\n';
+        }
+        else
+        {
+            cout<<(na<ba ? '<':'>')<<'\n';
         }
     }
-
-    cout<<ans<<'\n';
+    else
+    {
+        cout<<(sa<sb ? '>':'<')<<'\n';
+    }
 }
 
 int main()

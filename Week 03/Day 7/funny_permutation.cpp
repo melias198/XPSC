@@ -19,27 +19,23 @@ using namespace std;
 void solve()
 {
     int n;
-    char ch;
-    cin>>n>>ch;
-    string s;
-    cin>>s;
-    s=s+s;
-    int ans=0;
-    for(int i=0;i<s.size();i++)
+    cin>>n;
+    if(n==3)
     {
-        if(s[i]==ch)
-        {
-            int cnt=0;
-            while(s[i]!='g' && i<s.size())
-            {
-                i++;
-                cnt++;
-            }
-            ans=max(ans,cnt);
-        }
+        cout<<-1<<'\n';
+        return;
     }
-
-    cout<<ans<<'\n';
+    if(n==2)
+    {
+        cout<<2<<" "<<1<<'\n';
+        return;
+    }
+    vector<int>ans;
+    for(int i=3;i<=n;i++)
+    {
+       cout<<i<<" ";
+    }
+    cout<<2<<" "<<1<<'\n';
 }
 
 int main()
