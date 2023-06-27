@@ -20,6 +20,7 @@ void solve()
 {
     string s;
     cin>>s;
+
     map<char,int>mp;
     int j=1;
     for(char i='a';i<='z';i++,j++)
@@ -28,42 +29,37 @@ void solve()
     }
 
     int n=s.size();
-    vector<pair<int,int>>v(n);
+    vector<pair<int,int>>v;
+
+    int first=min(mp[s[0]],mp[s[n-1]]);
+    int last=max(mp[s[0]],mp[s[n-1]]);
+
     for(int i=0;i<n;i++)
     {
-        v[i].first=mp[s[i]];
-        v[i].second=i+1;
-    }
-    int first=mp[s[0]],last=mp[s[n-1]];
-    if(first>last)
-    {
-        sort(v.begin(),v.end(),greater<pair<int,int>>());
-    }
-    else
-    {
-        sort(v.begin(),v.end());
-    }
-    vector<int>ans;
-    int cost=0,jump=0;
-    bool flag=false;
-    int i;
-    for(i=1;i<v.size();i++)
-    {
-        if(v[i-1].first==first || flag)
+        if(mp[s[i]]>=first && mp[s[i]]<=last)
         {
-            flag=true;
-            cost+=abs(v[i].first-v[i-1].first);
-            ans.push_back(v[i-1].second);
-            jump++;
+           v.push_back({mp[s[i]],i+1});
         }
     }
-   // jump++;
-    ans.push_back(v[n-1].second);
     
-    cout<<cost<<" "<<ans.size()<<'\n';
-    for(auto it:ans)
+    if(v.size()>2)
     {
-        cout<<it<<" ";
+        if(mp[s[0]]>mp[s[n-1]])
+        {
+            sort(v.begin()+1,v.begin()+v.size()-1,greater<pair<int,int>>());
+        }
+        else
+        {
+            sort(v.begin()+1,v.begin()+v.size()-1);
+        }
+    }
+
+    int cost=abs(first-last);
+    
+    cout<<cost<<" "<<v.size()<<'\n';
+    for(int i=0;i<v.size();i++)
+    {
+        cout<<v[i].second<<" ";
     }
     cout<<'\n';
 }
