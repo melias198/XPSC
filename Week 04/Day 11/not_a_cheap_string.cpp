@@ -23,14 +23,16 @@ void solve()
     int p;
     cin>>p;
     int sum=0;
-    for(int i=0;i<s.size();i++)
+    int n=s.size();
+    for(int i=0;i<n;i++)
     {
         sum+=(s[i]-'a'+1);
     }
     string t(s);
     sort(t.rbegin(),t.rend());
     map<char,int>mp;
-    for(int i=0;i<t.size();i++)
+    int m=t.size();
+    for(int i=0;i<m;i++)
     {
         if(sum>p)
         {
@@ -39,7 +41,7 @@ void solve()
         }
     }
 
-    for(int i=0;i<s.size();i++)
+    for(int i=0;i<n;i++)
     {
         if(mp[s[i]]>0)
         {
