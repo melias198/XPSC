@@ -26,38 +26,24 @@ void solve()
         cin>>s[i];
     }
 
-    vector<string>v(n);
-    for(int i=0;i<n-1;i++)
+    string ans="";
+    bool flag=true;
+    ans+=s[0][0];
+    for(int i=0;i<n-3;i++)
     {
         if(s[i][1]==s[i+1][0])
         {
-            v[i]=s[i];
-        }
-        else if(i==n-2)
-        {
-            v[i]+=s[i][1];
-            v[i]+=s[i][1];
+            ans+=s[i+1][0];
         }
         else
         {
-            v[i]=s[i];
-            v[i+1]+=s[i][1];
-            v[i+1]+=s[i][0];
-            v[i+2]=s[i+1];
-            i+=2;
+            ans+=s[i][1];
+            ans+=s[i+1][0];
+            flag=false;
         }
     }
-
-    string ans="";
-    ans+=v[0][0];
-    for(int i=0;i<n-2;i++)
-    {
-        if(v[i][1]==v[i+1][0])
-        {
-            ans+=v[i][1];
-        }
-    }
-    ans+=v[n-2][1];
+    ans+=s[n-3][1];
+    if(flag) ans+='b';
     cout<<ans<<'\n';
 }
 
