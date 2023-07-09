@@ -16,9 +16,22 @@
 #define minus cout<<-1<<endl
 using namespace std;
 
+int moves(int n,int x)
+{
+    return x-1+(n-1)/x;
+}
+
 void solve()
 {
-    
+    int n;
+    cin>>n;
+    int ans=INT_MAX;
+    for(int i=1;i<=sqrt(n);i++)
+    {
+        ans=min(ans,moves(n,i));
+    }
+
+    cout<<ans<<'\n';
 }
 
 int main()
