@@ -18,25 +18,26 @@ using namespace std;
 
 void solve()
 {
-    ll l,r;
-    cin>>l>>r;
-    
-    int ans=INT_MIN;
-    map<int,ll>mp;
-    for(int i=l;i<=r;i++)
+    int n;
+    cin>>n;
+    vector<int>v(n);
+    for(int i=0;i<n;i++)
     {
-        string s=to_string(i);
-        int n=s.size();
-        sort(s.begin(),s.end());
-        int a=s[0]-'0',b=s[n-1]-'0';
-        int x=abs(a-b);
-        ans=max(ans,x);
-        mp[x]=i;
-        if(x==9) break;
+        cin>>v[i];
     }
 
-    cout<<mp[ans]<<'\n';
+    int cnt=0;
+    int mn=v[n-1];
+    for(int i=n-2;i>=0;i--)
+    {
+        if(v[i]>mn)
+        {
+            cnt++;
+        }
+        mn=min(mn,v[i]);
+    }
 
+    cout<<cnt<<'\n';
 }
 
 int main()
