@@ -18,7 +18,29 @@ using namespace std;
 
 void solve()
 {
-    
+   int n;
+   cin>>n;
+   vector<int>v(n+1),idx(n+1);
+   map<int,int>mp;
+   for(int i=1;i<=n;i++)
+   {
+      cin>>v[i];
+      mp[v[i]]++;
+      idx[v[i]]=i;
+   }
+
+   int ans=-1;
+   for(auto it:mp)
+   {
+      if(it.second==1)
+      {
+        ans=idx[it.first];
+        break;
+      }
+   }
+
+   cout<<ans<<'\n';
+
 }
 
 int main()
