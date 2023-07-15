@@ -18,3 +18,7 @@
 
 ### Week 05
 [Week 05](https://docs.google.com/spreadsheets/d/1w2gMInD2rytZPQm8qI4Zt0zRO3VER9OBaRxGE86I0Fw/edit#gid=0).
+
+
+### Week 06
+[Week 06](https://docs.google.com/spreadsheets/d/1h-4YrT2mzAONLlmpDNIfdmLi_E0YdFAQTJm5egfGCgk/edit#gid=1314586077).
