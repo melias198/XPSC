@@ -16,41 +16,28 @@
 #define minus cout<<-1<<endl
 using namespace std;
 
-bool compare(const pair<int,int>&a,const pair<int,int>&b)
-{
-    return a.first>b.first;
-}
-
 void solve()
 {
-    int n,k,l;
-    cin>>n>>k>>l;
-    vector<pair<int,int>>playlist(n);
+    int n;
+    cin>>n;
+    vector<int>v(n);
     for(int i=0;i<n;i++)
     {
-        int a,b;
-        cin>>a>>b;
-        playlist[i].first=a;
-        playlist[i].second=b;
+        cin>>v[i];
     }
 
-    sort(playlist.begin(),playlist.end(),compare);
-    
-    int ans=0;
-    for(int i=0;i<n;i++)
+    vector<int>result;
+    result.push_back(abs(v[1]-v[0]));
+    for(int i=1;i<n-2;i++)
     {
-        if(k==0)
-        {
-            break;
-        }
-        if(playlist[i].second==l)
-        {
-            ans+=playlist[i].first;
-            k--;
-        }
+        int a=abs(v[i+1]-v[i]);
+        int b=abs(v[i]-v[i-1]);
+        int x=max(a,b);
+        result.push_back(x);
     }
-    if(ans==0 || k!=0) cout<<-1<<'\n';
-    else cout<<ans<<'\n';
+    result.push_back(abs(v[n-1]-v[n-2]));
+    int ans=*min_element(result.begin(),result.end());
+    cout<<ans<<'\n';
 }
 
 int main()
