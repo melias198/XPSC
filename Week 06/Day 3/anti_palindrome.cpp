@@ -37,7 +37,7 @@ void solve()
 
     if(m==n || odd_occ>1)
     {
-        cout<<0<<'\n';
+        cout<<0<<'\n';  
         return;
     }
     if(m==1 && (n&1))
