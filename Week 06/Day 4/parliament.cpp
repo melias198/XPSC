@@ -18,34 +18,11 @@ using namespace std;
 
 void solve()
 {
-    int n;
-    cin>>n;
-    string s;
-    cin>>s;
-    map<char,int>mp;
-    for(int i=0;i<n;i++)
-    {
-        mp[s[i]]++;
-    }
-
-    int m=mp.size();
-    int odd_occ=0;
-    for(auto it:mp)
-    {
-        if(it.second&1) odd_occ++;
-    }
-
-    if(m==n || odd_occ>1)
-    {
-        cout<<0<<'\n';
-        return;
-    }
-    if(m==1 && (n&1))
-    {
-        cout<<2<<'\n';
-        return;
-    }
-    cout<<1<<'\n';
+    double n,x;
+    cin>>n>>x;
+    double y=n/2.0;
+    if(y<=x) cout<<"YES"<<'\n';
+    else cout<<"NO"<<'\n';
 }
 
 int main()

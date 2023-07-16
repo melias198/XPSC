@@ -18,34 +18,22 @@ using namespace std;
 
 void solve()
 {
-    int n;
-    cin>>n;
     string s;
     cin>>s;
-    map<char,int>mp;
-    for(int i=0;i<n;i++)
-    {
-        mp[s[i]]++;
-    }
+    string ans="";
 
-    int m=mp.size();
-    int odd_occ=0;
-    for(auto it:mp)
-    {
-        if(it.second&1) odd_occ++;
-    }
+    int a=(10*(s[0]-'0')+s[1]-'0');
+    if(a>12) ans+="DD/";
+    else ans+="MM/";
 
-    if(m==n || odd_occ>1)
-    {
-        cout<<0<<'\n';
-        return;
-    }
-    if(m==1 && (n&1))
-    {
-        cout<<2<<'\n';
-        return;
-    }
-    cout<<1<<'\n';
+    int b=(10*(s[3]-'0')+s[4]-'0');
+    if(b>12) ans+="DD/";
+    else ans+="MM/";
+
+    ans+="YYYY";
+
+    if(ans[0]==ans[3]) cout<<"BOTH"<<'\n';
+    else cout<<ans<<'\n';
 }
 
 int main()

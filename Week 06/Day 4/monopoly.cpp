@@ -18,34 +18,29 @@ using namespace std;
 
 void solve()
 {
-    int n;
-    cin>>n;
-    string s;
-    cin>>s;
-    map<char,int>mp;
+    int n=4;
+    vector<int>v(n);
     for(int i=0;i<n;i++)
     {
-        mp[s[i]]++;
+        cin>>v[i];
     }
 
-    int m=mp.size();
-    int odd_occ=0;
-    for(auto it:mp)
+    int mx=*max_element(v.begin(),v.end());
+
+    int sum=0;
+    bool flag=true;
+    for(int i=0;i<n;i++)
     {
-        if(it.second&1) odd_occ++;
+        if(v[i]==mx && flag)
+        {
+            flag=false;
+            continue;
+        } 
+        sum+=v[i];
     }
 
-    if(m==n || odd_occ>1)
-    {
-        cout<<0<<'\n';
-        return;
-    }
-    if(m==1 && (n&1))
-    {
-        cout<<2<<'\n';
-        return;
-    }
-    cout<<1<<'\n';
+    if(sum<mx) cout<<"YES"<<'\n';
+    else cout<<"NO"<<'\n';
 }
 
 int main()
