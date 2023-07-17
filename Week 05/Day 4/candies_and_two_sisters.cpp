@@ -18,28 +18,20 @@ using namespace std;
 
 void solve()
 {
-    ll x;
-    cin>>x;
-    if(x>1)
+    ll n;
+    cin>>n;
+    if(n<=2)
     {
-        if(x<=1e6)
-        {
-            ll c=x/2;
-            cout<<1<<" "<<x-c<<" "<<c<<'\n';
-        }
-        else if(x>1e6 && x%1000000!=0)
-        {
-        cout <<1000000<<" "<<x/1000000<<" "<<x%1000000<<'\n';
-        }
-        else
-        {
-        cout <<1000000<<" "<<x/1000000-1<<" "<<1000000<<'\n';
-        }
+        cout<<0<<'\n';
+        return;
     }
-    else
+    ll ans=n/2;
+    if(n%2==0)
     {
-        cout<<-1<<'\n';
+        ans=ans-1;
     }
+
+    cout<<ans<<'\n';
 }
 
 int main()
