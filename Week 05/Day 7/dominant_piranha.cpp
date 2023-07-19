@@ -18,7 +18,26 @@ using namespace std;
 
 void solve()
 {
-    
+    int n;
+	cin >> n;
+	vector<int> v(n);
+	int mx = 0;
+	for(int i=0;i<n;i++) 
+    {
+        int x;
+		cin >> x;
+        v[i]=x;
+		mx = max(mx, x);
+	}
+
+	int idx = -1;
+	for (int i = 0; i < n; ++i) 
+    {
+		if (v[i] != mx) continue;
+		if (i > 0 && v[i - 1] != mx) idx = i + 1;
+		if (i < n - 1 && v[i + 1] != mx) idx = i + 1;
+	}
+	cout << idx << endl;
 }
 
 int main()

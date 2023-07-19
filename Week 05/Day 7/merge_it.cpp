@@ -16,11 +16,26 @@
 #define minus cout<<-1<<endl
 using namespace std;
 
+int cnt[3];
+
 void solve()
 {
+    memset(cnt, 0, sizeof cnt);
     int n;
     cin>>n;
-    vector<int>v(n);
+    for(int i=0;i<n;i++)
+    {
+        int x;
+        cin>>x;
+        cnt[x%3]++;
+    }
+
+    int res = cnt[0];
+    int mn = min(cnt[1], cnt[2]);
+    res += mn;
+    cnt[1] -= mn, cnt[2] -= mn;
+    res += (cnt[1] + cnt[2]) / 3;
+    cout << res << endl;
     
 }
 
