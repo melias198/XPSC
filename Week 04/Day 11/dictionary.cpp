@@ -28,7 +28,7 @@ int main()
 {
     fast;
     int idx=1;
-    for(char i='a';i<='z';i++)
+    for(char i='a';i<='z';i++) 
     {
         for(char j='a';j<='z';j++)
         {
