@@ -18,7 +18,27 @@ using namespace std;
 
 void solve()
 {
-    
+    int n;
+    cin>>n;
+    vector<int>v(n);
+    for(int i=0;i<n;i++)
+    {
+        cin>>v[i];
+    }
+
+    sort(v.begin(),v.end());
+
+    int result = v[n - 1] - v[0];
+
+	for (int i = 0; i < n; i++) 
+    {
+		for (int j = i + 1; j < n; j++)
+        {
+			result = min(result, v[j] - v[i]);
+		}
+	}
+
+	cout << result << endl;
 }
 
 int main()

@@ -18,7 +18,16 @@ using namespace std;
 
 void solve()
 {
-    
+    int n,a,b;
+    cin>>n>>a>>b;
+    string ans="";
+    for(int i=0;i<n;i++)
+    {
+        char ch='a'+i%b;
+        ans+=ch;
+    }
+
+    cout<<ans<<'\n';
 }
 
 int main()

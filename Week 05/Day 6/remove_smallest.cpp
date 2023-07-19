@@ -26,7 +26,20 @@ void solve()
         cin>>v[i];
     }
 
-    
+    sort(v.begin(),v.end());
+
+    bool flag=true;
+    for(int i=1;i<n;i++)
+    {
+        if((v[i]-v[i-1])>1)
+        {
+            flag = false;
+            break;
+        }
+    }
+
+    if(flag) cout<<"YES"<<'\n';
+    else cout<<"NO"<<'\n';
 }
 
 int main()
