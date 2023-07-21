@@ -14,7 +14,7 @@ int main()
     {
         cnt++;
         n=n/2;
-    }
-    cout<<cnt<<'\n';
+    } 
+    cout<<cnt<<'\n'; 
     return 0;
 }
