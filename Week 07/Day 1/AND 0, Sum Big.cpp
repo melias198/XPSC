@@ -16,19 +16,20 @@
 #define minus cout<<-1<<endl
 using namespace std;
 
+const int MOD=1e9+7;
+
 void solve()
 {
-    int n;
-    cin>>n;
-    int last=0;
-		for(int i=0; i<30; ++i)
-		{
-			if(((n>>i)&1) == 1)
-			{
-				last=i;
-			}
-		}
-		cout<<(1<<last)-1<<"\n"; 
+    ll n,k;
+    cin>>n>>k;
+    
+    ll ans=1;
+    for(int i=0;i<k;i++)
+    {
+        ans=(ans*n)%MOD;
+    }
+
+    cout<<ans<<'\n';
 }
 
 int main()

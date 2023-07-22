@@ -18,10 +18,31 @@ using namespace std;
 
 void solve()
 {
-    int a,b;
-    cin>>a>>b;
-    int ans=a^b;
-    cout<<ans<<endl;
+    int n;
+    cin>>n;
+    vector<int>v(n);
+    for(int i=0;i<n;i++)
+    {
+        cin>>v[i];
+    }
+
+    sort(v.begin(),v.end());
+
+    ll ans=0;
+    for (int j=29; j>=0; j--)
+    {
+        ll cnt=0;
+        for (int i=0; i<n; i++)
+        {
+            if (v[i]>=(1<<j)&&v[i]<(1<<(j+1)))
+            {
+                cnt++;
+            }
+        }
+        ans+=cnt*(cnt-1)/2;
+    }
+
+    cout<<ans<<'\n';
 }
 
 int main()

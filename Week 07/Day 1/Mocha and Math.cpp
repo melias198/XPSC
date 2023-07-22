@@ -1,20 +1,49 @@
+/*
+||-----------------------------------||
+||           Mohammad Elias          ||
+||-----------------------------------||
+*/
 #include <bits/stdc++.h>
-
+#define ll long long int
+#define pub push_back
+#define pob pop_back
+#define PI 3.14159265359
+#define fast ios::sync_with_stdio(false); cin.tie(NULL);
+#define yes cout<<"YES"<<endl
+#define no cout<<"NO"<<endl
+#define cyes cout<<"Yes"<<endl
+#define cno cout<<"No"<<endl
+#define minus cout<<-1<<endl
 using namespace std;
+
+void solve()
+{
+    int n;
+    cin>>n;
+    vector<int>v(n);
+    for(int i=0;i<n;i++)
+    {
+        cin>>v[i];
+    }
+
+    int ans=v[0];
+    for(int i=1;i<n;i++)
+    {
+        ans=ans&v[i];
+    }
+
+    cout<<ans<<'\n';
+
+}
 
 int main()
 {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
-    int n;
-    cin>>n;
-    int cnt=0;
-    //cnt=(1<<3);
-    while(n)
+    fast;
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        cnt++;
-        n=n/2;
-    } 
-    cout<<cnt<<'\n'; 
+        solve();
+    }
     return 0;
 }
