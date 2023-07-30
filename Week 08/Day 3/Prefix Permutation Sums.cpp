@@ -18,22 +18,7 @@ using namespace std;
 
 void solve()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
-
-    if((a>b) && (b>c))
-    {
-        int ans=a|b|c;
-        cout<<ans<<'\n';
-    }
-    else if((a<b) && (b<c))
-    {
-        cout<<0<<'\n';
-    }
-    else
-    {
-        cout<<-1<<'\n';
-    }
+    
 }
 
 int main()
