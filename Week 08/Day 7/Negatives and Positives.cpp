@@ -18,24 +18,23 @@ using namespace std;
 
 void solve()
 {
-    int n, c, ans = 0; 
-    cin >> n >> c;
-    priority_queue<int> q;
-    for(int i = 1, x; i <= n; ++i) 
-    {
-        cin >> x;
-        q.push(-x - i);
-    }
-
-    while(!q.empty()) 
-    {
-        int x = -q.top(); q.pop();
-        if(x > c) break;
-        ++ans;
-        c -= x;
-    }
-    
-    cout << ans << "\n";
+    int n; cin >> n;
+        vector<int> a(n);
+        long long sum = 0;
+        int negs = 0;
+        for(int i = 0; i < n; ++i) 
+        {
+            cin >> a[i];
+            if(a[i] < 0) 
+            {
+                ++negs;
+                a[i] = -a[i];
+            }
+            sum += a[i];
+        }
+        sort(a.begin(), a.end());
+        if(negs & 1) sum -= 2 * a[0];
+        cout << sum << "\n";
 }
 
 int main()

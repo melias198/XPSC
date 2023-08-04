@@ -18,23 +18,22 @@ using namespace std;
 
 void solve()
 {
-    int n, c, ans = 0; 
-    cin >> n >> c;
-    priority_queue<int> q;
-    for(int i = 1, x; i <= n; ++i) 
+    int n; string s;
+    cin >> n >> s;
+    vector<int> cnt(26, 0), p(26, 0);
+    for(auto x: s) cnt[x - 'a']++;
+    int ans = 0;
+    for(auto x: s) 
     {
-        cin >> x;
-        q.push(-x - i);
+        --cnt[x - 'a'];
+        ++p[x - 'a'];
+        int cur = 0;
+        for(int i = 0; i < 26; ++i) 
+        {
+            cur += min(1, cnt[i]) + min(1, p[i]);
+        }
+        ans = max(ans, cur);
     }
-
-    while(!q.empty()) 
-    {
-        int x = -q.top(); q.pop();
-        if(x > c) break;
-        ++ans;
-        c -= x;
-    }
-    
     cout << ans << "\n";
 }
 

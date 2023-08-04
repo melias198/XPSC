@@ -18,24 +18,13 @@ using namespace std;
 
 void solve()
 {
-    int n, c, ans = 0; 
-    cin >> n >> c;
-    priority_queue<int> q;
-    for(int i = 1, x; i <= n; ++i) 
-    {
-        cin >> x;
-        q.push(-x - i);
-    }
-
-    while(!q.empty()) 
-    {
-        int x = -q.top(); q.pop();
-        if(x > c) break;
-        ++ans;
-        c -= x;
-    }
-    
-    cout << ans << "\n";
+    int n;
+	cin >> n;
+	string s;
+	cin >> s;
+	int l = 0, r = n - 1, ans = n;
+	while (s[l] != s[r] && ans > 0) {l++; r--; ans -= 2;}
+	cout << ans << '\n';
 }
 
 int main()
