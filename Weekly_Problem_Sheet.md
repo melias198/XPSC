@@ -26,3 +26,11 @@
 
 ### Week 07
 [Week 07](https://docs.google.com/spreadsheets/d/17mJvDiV3pKwpTXEdGh9LMMnO5pcdfFfD3QJv104SCPE/edit#gid=1314586077).
+
+
+### Week 08
+[Week 08](https://docs.google.com/spreadsheets/d/1eTY0E3NUAuemYU9YfSSBDQv4iulIZmdtogxyyaZg9kA/edit#gid=0).
+
+
+### Week 09
+[Week 09](https://docs.google.com/spreadsheets/d/1oRENA15G7kKQEqwW7mQq-H1v7_2CzfQrH7YNtDcTaJg/edit#gid=0).
