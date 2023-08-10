@@ -7,54 +7,45 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    ll n, k;
-    cin >> n >> k;
-    queue<int> q;
+    int n, x;
+    long long k;
 
-    int ans=0;
+    cin >> n >> k;
+
+    deque<int> q;
     for (int i = 0; i < n; i++)
     {
-        int x;
-        cin>>x;
-        if(x>ans) ans=x;
-        q.push(x);
+        cin >> x;
+        q.push_back(x);
     }
 
-    if(k>=n-1)
+    if (k >= n)
     {
-        printf("%d",ans);
+        cout << n;
+        return 0;
     }
-    else{
 
-    
-
-    int ans = 0;
     int cnt = 0;
-    int a = q.front();
-    q.pop();
     while (true)
     {
-        int b = q.front();
-        if (a > b)
+        int x = q.front();
+        q.pop_front();
+
+        auto p=q.begin();
+        while (p != q.end() && x > *p)
         {
-            q.pop();
-            q.push(b);
             cnt++;
+            p++;
         }
-        else
-        {
-            cnt = 0;
-            q.push(a);
-            a=b;
-        }
+
         if (cnt >= k)
         {
-            ans = a;
-            break;
+            cout << x;
+            return 0;
         }
-    }
 
-    printf("%d",ans);
+        cnt = 1;
+        q.push_back(x);
     }
 
     return 0;
