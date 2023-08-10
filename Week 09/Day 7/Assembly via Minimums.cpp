@@ -21,7 +21,26 @@ using namespace std;
 
 void solve()
 {
-   
+   ll n,N;
+   cin>>n;
+   N=(n*(n-1))/2;
+   vector<ll>v(N);
+   for(int i=0;i<N;i++)
+   {
+        cin>>v[i];
+   }
+
+   sort(v.begin(),v.end());
+
+   ll nxt=-1,add=n-1;
+   while(nxt<N)
+   {
+        nxt+=add;
+        cout<<v[nxt]<<" ";
+        add--;
+        if(add<=0) break;
+   }
+   cout<<v[nxt]<<'\n';
 }
 
 int main()
