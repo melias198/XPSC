@@ -18,7 +18,29 @@ using namespace std;
 
 void solve()
 {
-   
+   string s;
+   cin>>s;
+   int sz=s.size();
+   if(sz%2==0)
+   {
+       string part1="",part2="";
+       for(int i=0;i<sz/2;i++)
+       {
+            part1+=s[i];
+       }
+
+       for(int i=sz/2;i<sz;i++)
+       {
+            part2+=s[i];
+       }
+
+       if(part1==part2) cout<<"YES"<<'\n';
+       else cout<<"NO"<<'\n';
+   }
+   else
+   {
+       cout<<"NO"<<'\n';
+   }
 }
 
 int main()

@@ -18,7 +18,29 @@ using namespace std;
 
 void solve()
 {
-   
+    int n;
+    cin>>n;
+    vector<int>v(n);
+    for(int i=0;i<n;i++)
+    {
+        cin>>v[i];
+    }
+
+    priority_queue<int>st;
+    ll ans=0;
+    for(int i=0;i<n;i++)
+    {
+        if(v[i]>0) st.push(v[i]);
+        else 
+        {
+            if(!st.empty())
+            {
+                ans+=st.top();
+                st.pop();
+            } 
+        }
+    }
+    cout<<ans<<'\n';
 }
 
 int main()
