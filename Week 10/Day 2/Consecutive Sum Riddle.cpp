@@ -16,22 +16,9 @@
 #define minus cout<<-1<<endl
 using namespace std;
 
-const int mod=1e9+7;
-
 void solve()
 {
-      ll n;
-      cin>>n;
-      n+=n;
-
-      ll fact=1;
-      for(int i=3;i<=n;i++)
-      {
-          fact*=i;
-          fact%=mod;
-      }
-
-      cout<<fact<<'\n';
+   
 }
 
 int main()
