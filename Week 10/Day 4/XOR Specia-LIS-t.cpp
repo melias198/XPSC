@@ -18,7 +18,30 @@ using namespace std;
 
 void solve()
 {
-   
+   ll n;
+   cin>>n;
+   vector<ll>v(n);
+   for(int i=0;i<n;i++)
+   {
+       cin>>v[i];
+   }
+
+   ll x=0;
+   if(n%2==0) yes;
+   else
+   {
+        for(int i=0;i<n-1;i++)
+        {
+            if(v[i+1]<=v[i])
+            {
+                x=1;
+                break;
+            }
+        }
+        if(x==1) yes;
+        else no;
+   }
+
 }
 
 int main()

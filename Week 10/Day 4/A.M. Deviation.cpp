@@ -18,7 +18,12 @@ using namespace std;
 
 void solve()
 {
-   
+   int a,b,c;
+   cin>>a>>b>>c;
+
+   ll ans=(a+c)-(2*b);
+   if(ans%3==0) cout<<0<<'\n';
+   else cout<<1<<'\n';
 }
 
 int main()
