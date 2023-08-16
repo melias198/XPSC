@@ -18,13 +18,37 @@ using namespace std;
 
 void solve()
 {
-    int n;
-    cin>>n;
-    vector<int>v(n);
-    
-    
-}
+   int n;
+   cin>>n;
 
+   vector<int>a(n),b(n);
+   for(int i=0;i<n;i++)
+   {
+       cin>>a[i];
+   }
+
+   for(int i=0;i<n;i++)
+   {
+       cin>>b[i];
+   }
+
+   int l=-1,r=-1;
+   for(int i=0;i<n;i++)
+   {
+      if(a[i]!=b[i])
+      {
+         l=i+1;
+         while(i<n-1 && a[i]!=b[i])
+         {
+            i++;
+         }
+         r=i+1;
+         break;
+      }
+   }
+
+   cout<<l<<" "<<r<<'\n';
+}
 
 int main()
 {

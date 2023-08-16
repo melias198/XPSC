@@ -18,13 +18,49 @@ using namespace std;
 
 void solve()
 {
-    int n;
-    cin>>n;
-    vector<int>v(n);
-    
-    
-}
+   int n,s;
+   cin>>n>>s;
+   vector<int>v(n);
+   ll sum=0;
+   for(int i=0;i<n;i++)
+   {
+       cin>>v[i];
+       sum+=v[i];
+   }
 
+   if(sum==s)
+   {
+        cout<<0<<'\n';
+        return;
+   }
+
+   if(sum<s)
+   {
+        cout<<-1<<'\n';
+        return;
+   }
+
+   int l=0,r=0,cnt=0;
+   int ans=-1;
+   while(r<n)
+   {
+      cnt+=v[r];
+      if(cnt<s)
+      {
+         r++;
+      }
+      else
+      {
+         ans=max(ans,(n-(r-l+1)));
+         cnt-=v[l];
+         l++;
+         r++;
+      }
+   }
+
+   cout<<ans<<'\n';
+
+}
 
 int main()
 {
