@@ -16,15 +16,14 @@
 #define minus cout<<-1<<endl
 using namespace std;
 
-string s=" shata ",h=" hajar ",l=" lakh ",k=" kuti ";
-
 void solve()
 {
-   string st;
-   cin>>st;
+   int b,c,h;
+   cin>>b>>c>>h;
 
-   int n=st.size();
-   
+   int sum=c+h;
+   if(sum<b) cout<<2*sum+1<<'\n';
+   else cout<<2*b-1<<'\n';
 }
 
 int main()

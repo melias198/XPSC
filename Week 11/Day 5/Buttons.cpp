@@ -16,15 +16,12 @@
 #define minus cout<<-1<<endl
 using namespace std;
 
-string s=" shata ",h=" hajar ",l=" lakh ",k=" kuti ";
-
 void solve()
 {
-   string st;
-   cin>>st;
-
-   int n=st.size();
-   
+   ll a,b,c;
+   cin>>a>>b>>c;
+   if(a>b or (a==b && c&1)) cout<<"First"<<'\n';
+   else cout<<"Second"<<'\n';
 }
 
 int main()

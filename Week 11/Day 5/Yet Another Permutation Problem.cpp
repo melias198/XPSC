@@ -16,15 +16,29 @@
 #define minus cout<<-1<<endl
 using namespace std;
 
-string s=" shata ",h=" hajar ",l=" lakh ",k=" kuti ";
-
 void solve()
 {
-   string st;
-   cin>>st;
+   int n;
+   cin>>n;
 
-   int n=st.size();
-   
+   vector<int>visited(n+1);
+   vector<int>ans;
+
+   for(int i=1;i<=n;i++)
+   {
+        if(visited[i]) continue;
+        int now=i;
+        while(now<=n)
+        {
+            if(visited[now]) break;
+            visited[now]=1;
+            ans.push_back(now);
+            now*=2;
+        }
+   }
+
+   for(auto it:ans) cout<<it<<" ";
+   cout<<endl;
 }
 
 int main()
