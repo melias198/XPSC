@@ -35,7 +35,8 @@ void solve()
     int n, k;
     cin >> n >> k;
     vector<int> a(n);
-    for (auto &x : a) {
+    for (auto &x : a)
+    {
       cin >> x;
       x %= k;
       if (!x) x = k;
