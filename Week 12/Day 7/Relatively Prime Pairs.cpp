@@ -27,7 +27,7 @@ void solve()
 
    while(tot)
    {
-        cout<<l++<<" "<<l++<<'\n';
+       // cout<<l++<<" "<<l++<<'\n';
         tot--;
    }
 }
