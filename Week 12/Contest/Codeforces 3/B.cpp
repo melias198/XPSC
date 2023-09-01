@@ -18,28 +18,34 @@ using namespace std;
 
 void solve()
 {
-   ll l,r;
-   cin>>l>>r;
+   string a,b;
+   cin>>a>>b;
 
-   ll tot=((r-l)+1)/2;
-
-   cout<<"YES"<<'\n';
-
-   while(tot)
+   if(a==b)
    {
-       // cout<<l++<<" "<<l++<<'\n'; //commented for due to yellow mark in vs code
-        tot--;
+        cout<<"YES"<<'\n';
+        return;
    }
+
+   int n=a.size();
+   bool flag=false;
+   for(int i=0;i<n-1;i++)
+   {
+        if(a[i]=='0' and b[i]=='0' and a[i+1]=='1' and b[i+1]=='1') flag = true;
+   }
+
+   if(flag) cout<<"YES"<<'\n';
+   else cout<<"NO"<<'\n';
 }
 
 int main()
 {
     fast;
-  //  ll t;
-  //  cin >> t;
-  //  while (t--)
-   // {
+    ll t;
+    cin >> t;
+    while (t--)
+    {
         solve();
-  //  }
+    }
     return 0;
 }
