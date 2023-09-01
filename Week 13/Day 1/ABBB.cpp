@@ -20,20 +20,24 @@ void solve()
 {
    string s;
    cin>>s;
-
-   int n=s.size();
-   int sorted=1;
-   for(int i=0;i<n;i++)
+   int sz=s.size();
+   stack<char>st;
+   for(int i=0;i<sz;i++)
    {
-        if(s[i]=='+' or s[i]=='1')
-        {
-           sorted=1;
-        }
-        else if(s[i]=='0')
-        {
-            sorted=0;
-        }
+       if (!st.empty() && (st.top() == 'A' && s[i] == 'B'))
+       {
+           st.pop();
+       }
+       else if (!st.empty() && (st.top() == 'B' && s[i] == 'B'))
+       {
+           st.pop();
+       }
+       else
+       {
+           st.push(s[i]);
+       }
    }
+   cout<<st.size()<<'\n';
 }
 
 int main()
