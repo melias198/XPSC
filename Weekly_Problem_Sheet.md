@@ -42,3 +42,12 @@
 
 ### Week 11
 [Week 11](https://docs.google.com/spreadsheets/d/1rASh2lf40BXLTNdO4AYUb7aNGtnxHgWMVC3Rl6Eu8Fk/edit#gid=1314586077).
+
+
+### Week 12
+[Week 12](https://docs.google.com/spreadsheets/d/1icbt_eBLEMnV1cIl9llHXASPj3coAzzT7htzuGKyJn8/edit#gid=0).
+
+
+### Week 13
+[Week 13](https://docs.google.com/spreadsheets/d/1e2AQk6WopCTNFgCPJFhc9HV52Z89_-NB3NmmHfoaakQ/edit#gid=0).
+
