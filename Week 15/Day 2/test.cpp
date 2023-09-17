@@ -1,8 +1,3 @@
-/*
-||-----------------------------------||
-||           Mohammad Elias          ||
-||-----------------------------------||
-*/
 #include <bits/stdc++.h>
 #define ll long long int
 #define pub push_back
@@ -16,12 +11,12 @@
 #define minus cout<<-1<<endl
 using namespace std;
 
-int n;
+ll n;
 const int INF = 1e9;
 const int N = 1e5;
-vector<pair<int,int>>adja_list[N];
+vector<pair<int,ll>> adja_list[N];
 int visited[N];
-int d[N];
+ll d[N];
 
 void dijkstra(int src)
 {
@@ -49,8 +44,8 @@ void dijkstra(int src)
 
         for(auto adja_entry:adja_list[selected_node])
         {
-            int adj_node=adja_entry.first;
-            int edges_cost=adja_entry.second;
+            ll adj_node=adja_entry.first;
+            ll edges_cost=adja_entry.second;
 
             if(d[selected_node]+edges_cost < d[adj_node])
             {
@@ -60,26 +55,23 @@ void dijkstra(int src)
     }
 }
 
-
-
 void solve()
 {
-   int k,a,b;
+   ll k,a,b;
    cin>>n>>k>>a>>b;
 
-   vector<int>x(n+1),y(n+1);
+   vector<ll>x(n+1),y(n+1);
    for(int i=1;i<=n;i++)
    {
         cin>>x[i]>>y[i];
    }
 
-   visited[N]={0};
-
-   for (int i=1; i<=N; i++) 
+   // Initialize visited and adja_list for each test case
+   for (int i = 1; i <= n; i++) 
    {
+        visited[i] = 0;
         adja_list[i].clear(); 
    }
-
 
    for(int u=1;u<=n;u++)
    {
@@ -87,7 +79,7 @@ void solve()
         {
             if(u!=v)
             {
-                int w=abs(x[u]-x[v])+abs(y[u]-y[v]);
+                ll w=abs(x[u]-x[v])+abs(y[u]-y[v]);
                 if(u<=k and v<=k) w=0;
                 adja_list[u].push_back({v,w});
                 adja_list[v].push_back({u,w});
@@ -100,19 +92,6 @@ void solve()
    dijkstra(src);
 
    cout<<d[b]<<'\n';
-
-/*
-   for(int it=1;it<=n;it++)
-   {
-        for(auto jt:adja_list[it])
-        {
-            cout<<it<<"->"<<jt.first<<"="<<jt.second<<'\n';
-        }
-   }
-*/
-
-   
-
 }
 
 int main()
