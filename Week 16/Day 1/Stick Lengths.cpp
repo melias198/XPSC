@@ -16,7 +16,7 @@ int main()
         cin>>v[i];
     }
 
-    sort(v.begin(),v.end());
+    sort(v.begin(),v.end()); 
 
     ll val=0;
     if(n%2==0) val=v[n/2-1];
