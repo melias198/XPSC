@@ -18,31 +18,17 @@ using namespace std;
 
 void solve()
 {
-   ll n,k,b;
+   ll n;
    cin>>n;
 
-   vector<ll>v[n];
-   set<ll>st,tst;
-   map<ll,ll>mp,tmp;
-   map<ll,vector<ll>>index;
-
-   ll mx=0;
-   for(int i=0;i<n;i++)
+   ll cnt=1;
+   while(n--)
    {
-        vector<ll>temp;
-        cin>>k;
-        for(int j=0;j<k;j++)
-        {
-            cin>>b;
-            temp.push_back(b);
-            mp[b]++;
-            st.insert(b);
-            index[b].push_back(i);
-        }
-        v[i]=temp;
+        cout<<cnt<<" ";
+        cnt+=2;
    }
 
-   
+   cout<<endl;
 }
 
 int main()

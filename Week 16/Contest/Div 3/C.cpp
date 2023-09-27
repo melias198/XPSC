@@ -18,31 +18,14 @@ using namespace std;
 
 void solve()
 {
-   ll n,k,b;
-   cin>>n;
+   ll n,k,x;
+   cin>>n>>k>>x;
 
-   vector<ll>v[n];
-   set<ll>st,tst;
-   map<ll,ll>mp,tmp;
-   map<ll,vector<ll>>index;
-
-   ll mx=0;
-   for(int i=0;i<n;i++)
-   {
-        vector<ll>temp;
-        cin>>k;
-        for(int j=0;j<k;j++)
-        {
-            cin>>b;
-            temp.push_back(b);
-            mp[b]++;
-            st.insert(b);
-            index[b].push_back(i);
-        }
-        v[i]=temp;
-   }
-
+   ll minimum_summ=(k*(k+1))/2;
+   ll maximum_summ=(n*(n+1))/2-(n-k)*(n-k+1)/2;
    
+   if(x>=minimum_summ and x<=maximum_summ) yes;
+   else no;
 }
 
 int main()
